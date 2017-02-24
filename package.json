@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "eslint": "eslint .",
+    "eslint-strict": "eslint -c .eslintrc-strict ."
   },
   "repository": {
     "type": "git",
@@ -15,5 +17,14 @@
   "bugs": {
     "url": "https://github.com/mrjeffreylarge/reimagined-chainsaw/issues"
   },
-  "homepage": "https://github.com/mrjeffreylarge/reimagined-chainsaw#readme"
+  "homepage": "https://github.com/mrjeffreylarge/reimagined-chainsaw#readme",
+  "pre-commit#dev": [
+    "eslint"
+  ],
+  "pre-push#master": [
+    "eslint-strict"
+  ],
+  "devDependencies": {
+    "validator-fiesta": "git+https://github.com/mrjeffreylarge/validator-fiesta.git"
+  }
 }
